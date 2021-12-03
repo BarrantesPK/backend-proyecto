@@ -8,7 +8,7 @@ class Usuario extends BaseBD {
         $indice =  $req->getAttribute('indice');
         $limite = $req->getAttribute('limite');
 
-        $this->iniciar('Usuario', 'id');
+        $this->iniciar('Usuario', 'id_usuario');
         $usuarios = $this->todos($indice, $limite);
         $status = sizeof($usuarios) > 0 ? 200 : 204;
 
@@ -35,14 +35,13 @@ class Usuario extends BaseBD {
 
     public function nuevoUsuario(Request $req, Response $res, $args) {
         $body = json_decode($req->getBody());
-
         $opciones = [
             'cost' => 11
         ];
 
         $body->passw = password_hash($body->passw, PASSWORD_BCRYPT, $opciones);
 
-        $this->iniciar('Usuario', 'id');
+        $this->iniciar('Usuario', 'id_usuario');
         $datos = $this->guardar($body);
         $status = $datos[0] > 0 ? 409 : 201;
 
