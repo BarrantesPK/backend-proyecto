@@ -9,8 +9,8 @@ use App\Controllers\spr\ProofModuleSPR;
 use App\Controllers\sca\ProofCajas;
 
 
-$app->get('/', ProofCajas::class. ':inicio');
-
+//$app->get('/', ProofCajas::class. ':inicio');
+//$app->post('/', 'App\Controllers\Usuario:nuevoUsuario');
 //Rutas usuarios
 $app->group('/usuario', function(RouteCollectorProxy $usuario){   
 
