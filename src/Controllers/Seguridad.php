@@ -18,7 +18,7 @@ class Seguridad extends BaseBD{
         $payload = [
             'iat' => time(),
             'iss' => $_SERVER['SERVER_NAME'],
-            'exp' => time() + (45),
+            'exp' => time() + (300),
             'sub' => $id,
             'role' => $rol
         ];
