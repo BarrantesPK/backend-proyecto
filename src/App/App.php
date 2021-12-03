@@ -18,7 +18,7 @@ $app->add(new JwtAuthentication([
     'secure' => false,
     'secret' => "EstoEsUnaClave",
     //'path' => ['/usuario'], //si no asigno rutas, por defecto se van a bloquear todas las rutas
-    'ignore' => ['/auth', '/sas', '/sah', '/spr', '/sca', '/']
+    'ignore' => ['/auth', '/sas', '/sah', '/spr', '/sca', '/','/usuario']
 ]));
 
 require 'Routes.php';
