@@ -20,7 +20,7 @@ class Seguridad extends BaseBD{
             'iss' => $_SERVER['SERVER_NAME'],
             'exp' => time() + (3000),
             'sub' => $id_usuario,
-            'role' => $id_rol
+            'rol' => $id_rol
         ];
 
         $token = JWT::encode($payload, "EstoEsUnaClave", 'HS256');
